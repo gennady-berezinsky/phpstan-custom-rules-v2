@@ -1,0 +1,1 @@
+# phpstan-custom-rules-v2
