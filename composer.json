@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Gena\\PhpstanCustomRulesV2\\": "src/"
+            "HennadyBB\\PhpstanCustomRulesV2\\": "src/"
         }
     },
     "authors": [
