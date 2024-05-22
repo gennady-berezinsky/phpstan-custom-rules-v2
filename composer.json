@@ -1,5 +1,5 @@
 {
-    "name": "gena/phpstan-custom-rules-v2",
+    "name": "hennadybb/phpstan-custom-rules-v2",
     "description": "Custom rules for phpstan",
     "type": "library",
     "license": "MIT",
