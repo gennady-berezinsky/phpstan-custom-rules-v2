@@ -1,0 +1,20 @@
+{
+    "name": "gena/phpstan-custom-rules-v2",
+    "description": "Custom rules for phpstan",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gena\\PhpstanCustomRulesV2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "gennadybb",
+            "email": "gennady.berezinsky@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpstan/phpstan": "^1.11"
+    }
+}
