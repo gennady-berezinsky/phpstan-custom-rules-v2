@@ -1,3 +1,8 @@
+parameters:
+    level: 1
+    reportUnmatchedIgnoredErrors: false
+    paths:
+        - src
 rules:
-      - Rules\ForbiddenMethodRule;
-      - Rules\StaticMethodInVoterRule
+  - Rules\StaticMethodInVoterRule
+  - Rules\ForbiddenMethodRule

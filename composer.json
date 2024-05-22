@@ -7,7 +7,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "HennadyBB\\PhpstanCustomRulesV2\\": "src/"
+            "": "src/"
         }
     },
     "authors": [
