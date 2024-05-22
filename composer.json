@@ -3,7 +3,7 @@
     "description": "Custom rules for phpstan",
     "type": "library",
     "license": "MIT",
-    "version": "1.0",
+    "version": "1.0.1",
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
