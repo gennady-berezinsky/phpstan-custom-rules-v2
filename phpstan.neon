@@ -1,0 +1,3 @@
+rules:
+      - Rules\ForbiddenMethodRule;
+      - Rules\StaticMethodInVoterRule
