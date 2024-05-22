@@ -15,6 +15,7 @@
         }
     ],
     "require-dev": {
-        "phpstan/phpstan": "^1.11"
+        "phpstan/phpstan": "^1.11",
+        "symfony/symfony": "^7.0"
     }
 }
