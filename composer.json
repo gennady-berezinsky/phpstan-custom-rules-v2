@@ -3,6 +3,8 @@
     "description": "Custom rules for phpstan",
     "type": "library",
     "license": "MIT",
+    "version": "1.0",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "HennadyBB\\PhpstanCustomRulesV2\\": "src/"
