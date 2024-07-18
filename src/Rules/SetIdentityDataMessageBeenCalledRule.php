@@ -22,27 +22,29 @@ class SetIdentityDataMessageBeenCalledRule implements Rule
             return [];
         }
 
-        $className = $node->class->__toString();
-        if (str_contains($className, 'Messenger\Message')) {
-            $this->parentNames = [];
-            $reflection = new \ReflectionClass($className);
-            $this->getParentNames($reflection);
-            if (in_array('App\Messenger\Message\AbstractAuditedMessage', $this->parentNames)) {
-                foreach ($node->args as $arg) {
-                    $this->collectedCalls = [];
-                    if (get_class($arg->value) === Node\Expr\MethodCall::class) {
-                        $this->recursiceCheck($arg->value->getAttributes()['parent']->value);
+        if (method_exists($node->class, '__toString')) {
+            $className = $node->class->__toString();
+            if (str_contains($className, 'Messenger\Message')) {
+                $this->parentNames = [];
+                $reflection = new \ReflectionClass($className);
+                $this->getParentNames($reflection);
+                if (in_array('App\Messenger\Message\AbstractAuditedMessage', $this->parentNames)) {
+                    foreach ($node->args as $arg) {
+                        $this->collectedCalls = [];
+                        if (get_class($arg->value) === Node\Expr\MethodCall::class) {
+                            $this->recursiceCheck($arg->value->getAttributes()['parent']->value);
 
-                        $dispatchIndex = array_search('dispatch', $this->collectedCalls);
-                        if ($dispatchIndex) {
-                            if (!array_key_exists($dispatchIndex+1, $this->collectedCalls) || $this->collectedCalls[$dispatchIndex+1] !== 'setAuditIdentityData') {
-                                return ['Messages that implements AbstractAuditedMessage should call setAuditIdentityData after dispatch'];
+                            $dispatchIndex = array_search('dispatch', $this->collectedCalls);
+                            if ($dispatchIndex) {
+                                if (!array_key_exists($dispatchIndex+1, $this->collectedCalls) || $this->collectedCalls[$dispatchIndex+1] !== 'setAuditIdentityData') {
+                                    return ['Messages that implements AbstractAuditedMessage should call setAuditIdentityData after dispatch'];
+                                }
                             }
                         }
                     }
                 }
-            }
 
+            }
         }
 
         return [];
