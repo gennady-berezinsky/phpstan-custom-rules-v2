@@ -3,6 +3,7 @@
 namespace Rules;
 
 use PhpParser\Node;
+use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 
 class SetIdentityDataMessageBeenCalledRule implements Rule
@@ -29,7 +30,7 @@ class SetIdentityDataMessageBeenCalledRule implements Rule
             if (in_array('App\Messenger\Message\AbstractAuditedMessage', $this->parentNames)) {
                 foreach ($node->args as $arg) {
                     $this->collectedCalls = [];
-                    if (get_class($arg->value) === Expr\MethodCall::class) {
+                    if (get_class($arg->value) === Node\Expr\MethodCall::class) {
                         $this->recursiceCheck($arg->value->getAttributes()['parent']->value);
 
                         $dispatchIndex = array_search('dispatch', $this->collectedCalls);
