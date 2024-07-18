@@ -6,7 +6,7 @@ use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 
-class SetIdentityDataBeenCalledRule implements Rule
+class SetIdentityDataHandlerBeenCalledRule implements Rule
 {
 
     public function getNodeType(): string

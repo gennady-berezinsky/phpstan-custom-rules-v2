@@ -6,4 +6,5 @@ parameters:
 rules:
   - Rules\StaticMethodInVoterRule
   - Rules\ForbiddenMethodRule
-  - Rules\SetIdentityDataBeenCalledRule
+  - Rules\SetIdentityDataHandlerBeenCalledRule
+  - Rules\SetIdentityDataMessageBeenCalledRule
