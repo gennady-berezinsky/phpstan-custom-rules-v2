@@ -8,3 +8,4 @@ rules:
   - Rules\ForbiddenMethodRule
   - Rules\SetIdentityDataHandlerBeenCalledRule
   - Rules\SetIdentityDataMessageBeenCalledRule
+  - Rules\MandatoryCompanyFilterInterfaceImplementationRule
