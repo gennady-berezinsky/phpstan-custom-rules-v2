@@ -27,8 +27,10 @@ class MandatoryCompanyFilterInterfaceImplementationRule implements Rule
         $declaredClassParts = $node->namespacedName->parts;
         if (in_array('Entity', $declaredClassParts) && in_array('App', $declaredClassParts)) {
             if ($node->getProperty('company')) {
-                foreach ($node->implements as $intrf) {
-                    if (str_contains($intrf->toString(), 'CompanyObjectInterface') || str_contains($intrf->toString(), 'CompanyUserInterface')) {
+                $reflection = new \ReflectionClass($node->namespacedName->toCodeString());
+
+                foreach ($reflection->getInterfaceNames() as $intrf) {
+                    if (str_contains($intrf, 'CompanyObjectInterface') || str_contains($intrf, 'CompanyUserInterface')) {
                         $hasInterfase = true;
                         break;
                     }
