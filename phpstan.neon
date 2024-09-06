@@ -9,3 +9,4 @@ rules:
   - Rules\SetIdentityDataHandlerBeenCalledRule
   - Rules\SetIdentityDataMessageBeenCalledRule
   - Rules\MandatoryCompanyFilterInterfaceImplementationRule
+  - Rules\AuditedCommandRule
