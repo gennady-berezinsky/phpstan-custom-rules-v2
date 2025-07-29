@@ -10,3 +10,4 @@ rules:
   - Rules\SetIdentityDataMessageBeenCalledRule
   - Rules\MandatoryCompanyFilterInterfaceImplementationRule
   - Rules\AuditedCommandRule
+  - Rules\NoObjectsInPropertiesConstraintRule
