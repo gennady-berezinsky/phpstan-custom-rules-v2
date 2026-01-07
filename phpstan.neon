@@ -12,3 +12,4 @@ rules:
   - Rules\AuditedCommandRule
   - Rules\NoObjectsInPropertiesConstraintRule
   - Rules\ForbiddenImportRule
+  - Rules\CommandParentClassRule
