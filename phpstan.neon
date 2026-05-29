@@ -13,3 +13,4 @@ rules:
   - Rules\NoObjectsInPropertiesConstraintRule
   - Rules\ForbiddenImportRule
   - Rules\CommandParentClassRule
+  - Rules\ServiceResetInterfaceRule
