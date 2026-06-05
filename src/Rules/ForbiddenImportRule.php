@@ -27,7 +27,7 @@ class ForbiddenImportRule implements Rule
         'Symfony\Bridge\PhpUnit',
         'Symfony\Requirements',
         'Symfony\Bundle\WebProfilerBundle',
-        'Nelmio\ApiDocBundle',
+//        'Nelmio\ApiDocBundle',
     ];
 
     public function getNodeType(): string
